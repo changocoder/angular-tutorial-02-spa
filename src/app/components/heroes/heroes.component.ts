@@ -22,6 +22,7 @@ export class HeroesComponent implements OnInit {
   verHeroe(idHeroe: number): void{
 
     console.log(idHeroe);
+    this.router.navigate( ['/heroe', idHeroe]);
 
   }
 
