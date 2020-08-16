@@ -70,4 +70,19 @@ export class HeroesService {
       return this.heroes[idHeroe];
 
     }
+
+    buscarHeroes(termino: string): IHeroe[] {
+      const heroesArr: IHeroe[] = [];
+      termino = termino.toLowerCase();
+      for ( const heroe of this.heroes ) {
+
+        const nombre = heroe.nombre.toLowerCase();
+
+        if (nombre.indexOf( termino ) >= 0)  {
+          heroesArr.push( heroe );
+        }
+      }
+
+      return heroesArr;
+    }
 }
